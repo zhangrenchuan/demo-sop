@@ -1,0 +1,54 @@
+$sidebar-width: 210px; // 左侧栏宽度
+#app {
+  // 主体区域
+  .main-container {
+    height: 100%;
+    min-height: 100%;
+    transition: margin-left 0.28s;
+    margin-left: $sidebar-width;
+  }
+  // 侧边栏
+  .sidebar-container {
+    transition: width 0.28s;
+    width: $sidebar-width!important;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1001;
+    a {
+      display: inline-block;
+      width: 100%;
+    }
+    .svg-icon {
+      margin-right: 16px;
+    }
+    .el-menu {
+      border: none;
+      width: 100%;
+    }
+  }
+  .nest-menu .el-submenu>.el-submenu__title,
+  .el-submenu .el-menu-item {
+    min-width: $sidebar-width!important;
+    padding-left: 53px !important;
+    &:hover {
+    }
+  }
+  .el-menu--collapse .el-menu .el-submenu{
+    min-width: $sidebar-width!important;
+  }
+
+  .web-nav-title {
+    color: $--color-text-secondary;
+  }
+  // 底栏
+  .el-footer {
+    text-align: center;
+    border-top: solid 1px $--border-color-light;
+    line-height: 40px;
+    font-size: 12px;
+    color: $--color-text-regular;
+  }
+}

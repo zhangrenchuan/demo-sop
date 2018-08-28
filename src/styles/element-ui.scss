@@ -1,0 +1,961 @@
+//覆盖一些element-ui样式
+
+.el-breadcrumb__inner, .el-breadcrumb__inner a{
+  font-weight: 400!important;
+}
+
+.el-upload {
+  input[type="file"] {
+    display: none !important;
+  }
+}
+
+.el-upload__input {
+  display: none;
+}
+
+.cell {
+  .el-tag {
+    margin-right: 0px;
+  }
+}
+
+.small-padding {
+  .cell {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+.fixed-width{
+  .el-button--mini{
+    padding: 7px 10px;
+    width: 60px;
+  }
+}
+
+.status-col {
+  .cell {
+    padding: 0 10px;
+    text-align: center;
+    .el-tag {
+      margin-right: 0px;
+    }
+  }
+}
+
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+  transform: none;
+  left: 0;
+  position: relative;
+  margin: 0 auto;
+}
+
+//文章页textarea修改样式
+.article-textarea {
+  textarea {
+    padding-right: 40px;
+    resize: none;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #bfcbd9;
+  }
+}
+
+//element ui upload
+.upload-container {
+  .el-upload {
+    width: 100%;
+    .el-upload-dragger {
+      width: 100%;
+      height: 200px;
+    }
+  }
+}
+
+// ------------ SX START
+$bg: #2d3a4b;
+$light_gray: #6F6F6F;
+$--font-size-base: 18px !default;
+$--font-size-small: 16px !default;
+$--font-size-large: 20px !default;
+$font-color-black: #231F20; // 字体颜色
+$font-color-red: #4F77FF; // 平台默认字体色值
+$bg-color-btn: #4F77FF; // 平台默认按钮色值
+$bg-color-ash: #A4A7A8; // 平台灰色按钮色值
+$bg-color-ash-hover: #888888; // 灰色按钮 hover 色值
+$bg-color-btn-hover: #2C56E4; // 默认按钮 hover 色值
+$bg-color-white: #FFFFFF; // 白色背景
+$bg-color-hover: #E9EEFF; // 侧边栏 & 下拉框 hover 色值
+$bg-input-border: #F4BD62; // input 聚焦时边框色值
+$bg-state-color: #53C9B0; // 启用状态色值
+$bg-scene-color: #C1CFFF;
+
+// 登录页面
+.login-container {
+  .el-input {
+    display: inline-block;
+    height: 49px;
+    border-bottom: 1px solid #CFD3DD;
+    input {
+      background: transparent;
+      border: 0px;
+      -webkit-appearance: none;
+      border-radius: 0px;
+      padding: 12px 5px 12px 3px;
+      color: $light_gray;
+      height: 47px;
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #fff inset !important;
+        -webkit-text-fill-color: $light_gray !important;
+      }
+    }
+  }
+  .el-form-item {
+    position: relative;
+    width: 256px;
+    padding-top: 16px;
+    margin: 0 auto 34px;
+    color: #454545;
+    &:before {
+      content: '账号';
+      position: absolute;
+      top: 0;
+      left: 3px;
+      font-size: 14px;
+      color: #CFD2DC;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+  }
+  #psd-el {
+    &:before {
+      content: '密码';
+    }
+  }
+  .entry-error {
+    &:before {
+      color: #ED536C;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      top: 6px; // 父级高度 16px
+      left: -12px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #ED536C;
+    }
+  }
+  .el-button {
+    margin: 15px 0 0 38px;
+    background: $bg-color-btn;
+    border-radius: 100px;
+    border-color: $bg-color-btn;
+  }
+}
+// 页面主体背景颜色
+.app-main {
+  background-color: #f9f9f9;
+}
+// 侧边栏颜色修改
+.el-menu-item.is-active {
+  color: $font-color-red;
+}
+// 侧边栏 hover 效果
+.el-menu-item:hover, .el-menu-item:focus,
+.el-submenu__title:hover, .el-submenu__title:focus,
+.el-submenu__title:hover {
+  color: $font-color-red;
+  background-color: $bg-color-hover;
+}
+
+// 页面主体内容标题
+#page-title {
+  padding: 3px 0 23px 0;
+  margin: 0;
+  font-size: $--font-size-large;
+  color: $font-color-black;
+  letter-spacing: 0.8px;
+}
+// 所有搜索框部分的UI修改
+#search-box .search {
+  .el-form-item {
+    margin: 8px 0 0;
+    .el-input {
+      padding-bottom: 0;
+    }
+  }
+  .el-select {
+    margin-top: 0;
+  }
+  &>b, &>div {
+    display: inline-block;
+    width: 215px;
+    padding: 0 8px 0 0;
+    vertical-align: bottom;
+    margin-right: 5px;
+    font-size: 14px;
+    color: #292929;
+    letter-spacing: 1.39px;
+    font-weight: normal;
+  }
+  &>span {
+    display: inline-block;
+    vertical-align: top;
+    margin: 8px 0 0 0;
+  }
+  .button {
+    display: inline-block;
+    width: 100px;
+    margin: 0;
+    vertical-align: bottom;
+  }
+}
+// 账号基本信息
+#accountInfo {
+  p {
+    height: 25px;
+    margin: 17px 0 17px 20px;
+  }
+  b {
+    display: inline-block;
+    width: 170px;
+    font-weight: 400;
+    font-size: $--font-size-small;
+    color: #56595C;
+    vertical-align: top;
+  }
+  span {
+    overflow: hidden;
+    display: inline-block;
+    max-width: 400px;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    vertical-align: top;
+  }
+  .enabled-tag {
+    height: 25px;
+    line-height: 25px;
+    margin-top: -2px;
+  }
+}
+// 包裹信息的框框部分
+.el-card {
+  padding: 20px 31px;
+  border: 0;
+  margin-bottom: 20px;
+  background: $bg-color-white;
+  box-shadow: 0 1px 12px 0 rgba(224,225,228,0.50);
+  border-radius: 4.5px;
+  // el-card 中的标题 & 副标题
+  .el-card__header {
+    padding: 0;
+    border-bottom: 0;
+    font-size: $--font-size-base;
+    color: $font-color-black;
+    .sub-title {
+      margin-top: 7px;
+      font-size: 10px;
+      color: #858585;
+      letter-spacing: 0.71px;
+    }
+  }
+  .el-card__body {
+    padding: 20px 0;
+  }
+  // 账号信息 -> 二级标题设置
+  .title {
+    font-weight: 700;
+    font-size: $--font-size-base;
+  }
+  // 账号信息 -> 分块信息父级样式
+  .msg-box {
+    padding: 23px 0;
+    border-bottom: 1px solid #E2E2E2;
+    &:first-child {
+      padding: 0 0 23px;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+    span {
+      color: #303337;
+    }
+  }
+}
+// 全平台输入框 focus 效果
+.el-textarea__inner:focus,
+.el-input__inner:focus {
+  border-color: $bg-input-border;
+}
+// 为了左对齐表单名不得已而为之
+.el-form-item__label {
+  text-align: left;
+}
+// 对齐表单名后 -> 调整必输框小星号位置
+.el-form-item.is-required .el-form-item__label:before {
+  margin-left: -9px;
+}
+// 根据使用到的页面进行下拉框样式复写
+#linksList, #contentList,
+#openPassword, #pushList, #pushListModify,
+#contentListModify {
+  .el-select {
+    width: 108px;
+    margin-top: 10px;
+    margin-right: 30px;
+    .el-input__inner {
+      border: 0;
+      background: #F2F4F6;
+    }
+  }
+}
+// 下拉框子级选中效果及 hover 效果
+.el-select-dropdown__item {
+  &:hover {
+    color: $font-color-red;
+    background-color: $bg-color-hover;
+  }
+  &.hover {
+    color: $font-color-red;
+    background-color: $bg-color-hover;
+  }
+  &.selected {
+    color: $font-color-red;
+  }
+}
+// 下拉框记住选项 UI 更改
+.el-select-dropdown {
+  &.is-multiple {
+    .el-select-dropdown__item {
+      &.selected {
+        color: $font-color-red;
+        &.hover {
+          color: $font-color-red;
+        }
+      }
+    }
+  }
+}
+
+// 日期插件 UI 更改
+#contentList, #pushListModify {
+  // 清除日期插件的 ICON
+  .el-icon-date, .el-icon-time {
+    &:before {
+      content: '';
+    }
+  }
+  // 清除日期插件的 ICON 宽度
+  .el-input__icon {
+    &.el-icon-date,
+    &.el-icon-time,
+    &.el-range__close-icon {
+      width: 0;
+    }
+  }
+  // 日期插件大小设置
+  .el-date-editor {
+    width: 300px;
+    background-color: #F2F4F6;
+    border: 1px solid #F2F4F6;
+    .el-range-input {
+      width: 49%;
+      background-color: #F2F4F6;
+    }
+  }
+}
+// 日期插件上的选中颜色
+.el-date-table {
+  td {
+    // 修改选中日期的颜色
+    &.start-date, &.end-date {
+      span {
+        background-color: $bg-color-btn;
+      }
+    }
+    // 修改选中日期中间间隔的背景色
+    &.in-range {
+      div {
+        background-color: $bg-color-hover;
+      }
+    }
+    // 修改今天日期的颜色
+    &.today {
+      span {
+        color: $font-color-red;
+      }
+    }
+    // 日期 hover 效果
+    &.available {
+      &:hover {
+        color: $font-color-red;
+      }
+    }
+  }
+}
+.el-picker-panel__icon-btn:hover {
+  color: $font-color-red;
+}
+.el-range-editor.is-active {
+  border-color: $bg-input-border;
+}
+// 时间选择器 -> 确定按钮修改
+.el-time-panel__btn {
+  &.confirm {
+    color: $font-color-red;
+  }
+}
+// 页面按钮 UI 更改
+.modify-btn {
+  width: 88px;
+  border: 1px solid $bg-color-btn;
+  background: $bg-color-btn;
+  color: $bg-color-white;
+  border-radius: 3px;
+  &:hover {
+    color: $bg-color-white;
+    border-color: $bg-color-btn-hover;
+    background-color: $bg-color-btn-hover;
+  }
+  &:active, &:focus {
+    color: $bg-color-white;
+    border-color: $bg-color-btn;
+    background-color: $bg-color-btn;
+  }
+  &.right-btn {
+    float: right;
+  }
+  &.is-plain {
+    &:hover {
+      color: $bg-color-white;
+      border-color: $bg-color-btn-hover;
+      background-color: $bg-color-btn-hover;
+    }
+    &:active, &:focus {
+      color: $bg-color-white;
+      border-color: $bg-color-btn;
+      background-color: $bg-color-btn;
+    }
+  }
+  &.is-active {
+    color: $font-color-red;
+    border-color: $bg-color-btn;
+  }
+  &.button {
+    width: 120px;
+  }
+}
+// 白色按钮
+.modify-btn-white {
+  width: 88px;
+  border: 1px solid $bg-color-btn;
+  background: $bg-color-white;
+  color: $font-color-red;
+  border-radius: 3px;
+  &:hover {
+    color: $bg-color-btn-hover;
+    border-color: $bg-color-btn-hover;
+    background-color: $bg-color-white;
+  }
+  &:active, &:focus {
+    color: $font-color-red;
+    border-color: $bg-color-btn;
+    background-color: $bg-color-white;
+  }
+  &.right-btn {
+    float: right;
+  }
+  &.is-plain {
+    &:hover {
+      color: $bg-color-btn-hover;
+      border-color: $bg-color-btn-hover;
+      background-color: $bg-color-white;
+    }
+    &:active, &:focus {
+      color: $font-color-red;
+      border-color: $bg-color-btn;
+      background-color: $bg-color-white;
+    }
+  }
+  &.is-active {
+    color: $font-color-red;
+    border-color: $bg-color-btn;
+  }
+  &.button {
+    width: 120px;
+  }
+}
+// 白色按钮
+.modify-btn-ash {
+  width: 88px;
+  border: 1px solid $bg-color-ash;
+  background: $bg-color-ash;
+  color: $bg-color-white;
+  border-radius: 3px;
+  &:hover {
+    color: $bg-color-white;
+    border-color: $bg-color-ash-hover;
+    background-color: $bg-color-ash-hover;
+  }
+  &:active, &:focus {
+    color: $bg-color-white;
+    border-color: $bg-color-ash;
+    background-color: $bg-color-ash;
+  }
+  &.right-btn {
+    float: right;
+  }
+  &.is-plain {
+    &:hover {
+      color: $bg-color-white;
+      border-color: $bg-color-ash-hover;
+      background-color: $bg-color-ash-hover;
+    }
+    &:active, &:focus {
+      color: $bg-color-white;
+      border-color: $bg-color-ash;
+      background-color: $bg-color-ash;
+    }
+  }
+  &.is-active {
+    color: $font-color-red;
+    border-color: $bg-color-btn;
+  }
+  &.button {
+    width: 120px;
+  }
+}
+.el-table {
+  border: 1px solid #DEE2EB;
+  border-bottom: 0;
+}
+// 修改表格边框颜色
+.el-table th.is-leaf, .el-table td {
+  border-bottom: 1px solid #DEE2EB;
+}
+// 修改表格斑马纹及该列表中 icon 背景色
+.el-table--striped .el-table__body tr.el-table__row--striped td,
+.el-table--enable-row-hover .el-table__body tr:hover > td {
+  background: #F6F7F8;
+  .el-button {
+    background: #F6F7F8;
+  }
+}
+// 修改表格操作里的样式
+.operation-btn {
+  padding: 0;
+  border: 0;
+  font-size: $--font-size-large;
+  color: #595D60;
+  &:hover, &:focus {
+    border-color: $bg-color-btn;
+    color: $font-color-red;
+  }
+}
+// 表格中链接状态 tag
+// 强制重写账号信息中标签字体颜色
+.enabled-tag,
+.el-card .msg-box .enabled-tag {
+  border: 1px solid $bg-state-color;
+  color: #FFFFFF;
+  background: $bg-state-color;
+}
+.disable-tag,
+.el-card .msg-box .disable-tag {
+  border: 1px solid #999999;
+  color: #FFFFFF;
+  background: #999999;
+}
+// 分页器样式
+.el-pagination {
+  color: #757F80;
+}
+// 分页器上一页 & 下一页
+.el-pagination.is-background {
+  .btn-prev, .btn-next,
+  .btn-prev.disabled, .btn-next.disabled, .el-pager li {
+    border: 1px solid #E6E9EC;
+    margin: 0;
+    color: #757F80;
+    background: #FFFFFF;
+  }
+  .btn-next, .btn-next.disabled,
+  .el-pager li {
+    border-radius: 0;
+    margin-left: -1px;
+  }
+  // 圆角设置
+  .btn-prev, .btn-prev.disabled {
+    border-radius: 2px 0 0 2px;
+  }
+  .btn-next, .btn-next.disabled {
+    border-radius: 0 2px 2px 0;
+  }
+  .el-pager {
+    li {
+      &:not(.disabled).active {
+        border: 1px solid $bg-color-btn;
+        background-color: $bg-color-btn;
+        &:hover {
+          background-color: $bg-color-btn-hover;
+          color: $bg-color-white;
+        }
+      }
+      &:not(.disabled):hover {
+        color: $font-color-red;
+      }
+    }
+  }
+}
+// 分页器 xx 条/页 的 UI
+#linksList {
+  #pagination-box {
+    display: inline-block;
+    &>span {
+      float: left;
+      display: inline-block;
+      height: 28px;
+      line-height: 28px;
+      font-size: 13px;
+      color: #858585;
+    }
+    .el-pagination__sizes {
+      margin-right: 0;
+    }
+  }
+  #modify-pagination {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+  }
+  .el-select {
+    margin: 0;
+  }
+}
+// 上传图片按钮修改
+#linksListModify {
+  .el-button--primary {
+    background-color: $bg-color-btn;
+    border-color: $bg-color-btn;
+  }
+}
+// checked ui
+.el-radio__input {
+  // 被选择的状态
+  &.is-checked {
+    .el-radio__inner {
+      border-color: $bg-color-btn;
+      background: $bg-color-white;
+    }
+    & + .el-radio__label {
+      color: #231F20;
+    }
+  }
+  // 未被选择的状态
+  .el-radio__inner {
+    border: 1px solid #858585;
+    &:hover {
+      border-color: $bg-color-btn;
+    }
+    &:after {
+      width: 5px;
+      height: 5px;
+      background-color: $bg-color-btn;
+    }
+  }
+}
+.el-radio__label {
+  color: #858585;
+}
+
+// 新建推送 & 多选框
+#pushListModify {
+  .el-transfer-panel {
+    width: 375px;
+    // 标题头
+    .el-transfer-panel__header {
+      height: 50px;
+      background: $bg-color-white;
+      .el-checkbox {
+        line-height: 45px;
+        // 文字部分
+        .el-checkbox__label {
+          position: relative;
+          width: 315px;
+          padding-left: 0;
+          text-align: center;
+          background: none;
+          &:after {
+            content: '';
+            position: absolute;
+            bottom: -6px;
+            left: 50%;
+            width: 30px;
+            height: 2px;
+            margin-left: -15px;
+            background: #979797;
+          }
+        }
+      }
+    }
+  }
+  .el-transfer-panel__item {
+    padding-left: 0;
+  }
+  .el-checkbox__label {
+    padding-left: 39px;
+  }
+  // 穿梭框 -> 选择框部分
+  .el-checkbox__input {
+    // 选择框
+    padding-left: 15px;
+    &.is-indeterminate .el-checkbox__inner,
+    &.is-checked .el-checkbox__inner {
+      background-color: $bg-color-btn;
+      border-color: $bg-color-btn;
+    }
+    &.is-focus .el-checkbox__inner {
+      border-color: $bg-color-btn;
+    }
+    // 文字部分
+    &.is-checked {
+      & + .el-checkbox__label {
+        color: $font-color-red;
+        background: #F6F6F6;
+      }
+    }
+    // hover & 选择框
+    .el-checkbox__inner {
+      &:hover {
+        border-color: $bg-color-btn;
+      }
+    }
+  }
+  // hover & 文字
+  .el-transfer-panel__item {
+    &:hover {
+      color: $font-color-red;
+    }
+  }
+}
+// 选中 & 撤回按钮
+.el-transfer__button {
+  border-color: $bg-color-btn;
+  color: $bg-color-white;
+  background-color: $bg-color-btn;
+}
+.el-button--primary {
+  &:hover, &:focus {
+    border-color: $bg-color-btn-hover;
+    color: $bg-color-white;
+    background-color: $bg-color-btn-hover;
+  }
+}
+
+// 声连码管理 - 使用场景
+#contentListModify {
+  // check ui
+  .el-checkbox__input {
+    &.is-checked {
+      .el-checkbox__inner {
+        background-color: $bg-color-btn;
+        border-color: $bg-color-btn;
+      }
+      &+.el-checkbox__label {
+        color: $bg-color-btn;
+      }
+    }
+    &.is-focus {
+      .el-checkbox__inner {
+        border-color: $bg-color-btn;
+      }
+    }
+  }
+  .el-checkbox__inner {
+    &:hover {
+      border-color: $bg-color-btn;
+    }
+  }
+  .el-checkbox__label {
+    color: #858585;
+  }
+  .input-width {
+    width: 400px;
+  }
+  .height-input {
+    width: 200px;
+    margin-top: 10px;
+  }
+  // 高级设定按钮修改
+  .el-switch__core {
+    height: 14px;
+    border-radius: 3px;
+    &:after {
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      margin-top: -9px;
+      margin-left: -2px;
+      border-radius: 3px;
+      box-shadow: 0 1px 4px 0 rgba(0,0,0,0.20);
+    }
+  }
+  // 开启的样式
+  .el-switch.is-checked {
+    .el-switch__core {
+      &:after {
+        margin-left: -17px;
+        background-color: $bg-color-btn;
+      }
+    }
+  }
+  .height-set {
+    display: inline-block;
+    width: 160px;
+    color: #56595C;
+    .el-form-item__label {
+      padding-top: 10px;
+      font-weight: 400;
+      font-size: 13px;
+    }
+  }
+  .height-input {
+    position: relative;
+    width: 108px;
+    &:after {
+      content: '秒';
+      position: absolute;
+      top: 0;
+      right: 8px;
+      color: #999999;
+      line-height: 40px;
+    }
+    .el-input__inner {
+      padding: 0 30px 0 15px;
+    }
+  }
+  // 强制修改声连码时长的定位
+  .sonic-time {
+    .el-form-item__error {
+      left: 162px;
+    }
+  }
+  // 隐藏父级的边框
+  .el-collapse {
+    border: 0;
+  }
+  // 隐藏折叠面板的header
+  .el-collapse-item__header {
+    display: none;
+  }
+}
+#use-scene {
+  position: relative;
+  width: 895px;
+  margin-left: -40px;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background-color: $bg-color-white;
+    z-index: 9;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+  // 为左边的按钮挪出位置来
+  .is-animating {
+    padding-left: 40px;
+  }
+  // 走马灯
+  .el-radio-group {
+    padding: 5px 0 0 5px;
+  }
+  .el-carousel__container {
+    padding-left: 40px;
+    height: 145px;
+  }
+  // 走马灯按钮
+  .el-carousel__arrow {
+    //background: none;
+  }
+  .el-carousel__arrow--left {
+    left: 0;
+    background: url("../assets/images/sonic_code/sonic_content_btn_left.png") 0 0 no-repeat {
+      size: 26px 32px;
+    };
+  }
+  .el-carousel__arrow--right {
+    right: 0;
+    background: url("../assets/images/sonic_code/sonic_content_btn_right.png") 0 0 no-repeat {
+      size: 26px 32px;
+    };
+  }
+  // 单选框
+  .el-radio-button,
+  .el-radio-button__inner {
+    width: 137px;
+    height: 137px;
+  }
+  .el-radio-button {
+    position: relative;
+    margin: 0 30px 10px 0;
+    background-color: #999;
+    &:first-child {
+      &:hover {
+        box-shadow: 0 0 8px 0 $bg-scene-color;
+      }
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+    &.is-active {
+      background-color: $bg-color-btn;
+      &:first-child {
+        box-shadow: 0 0 8px 0 $bg-scene-color;
+      }
+      .el-radio-button__inner {
+        background: none;
+        border: 1px solid $bg-color-btn;
+        box-shadow: 0 0 8px 0 $bg-scene-color;
+        color: #000000;
+      }
+    }
+  }
+  .el-radio-button__inner {
+    height: 137px;
+    padding: 85px 3px 0;
+    border: 1px solid $bg-color-white;
+    border-radius: 4px;
+    background: none;
+    color: #9B9B9B;
+    font-size: 12px;
+    @include word-hidden;
+    &:hover {
+      box-shadow: 0 0 8px 0 $bg-scene-color;
+    }
+  }
+}
+.el-radio-button:focus:not(.is-focus):not(:active) {
+  box-shadow: none;
+}
+.el-button--primary {
+  background-color: $bg-color-btn;
+  border-color: $bg-color-btn;
+}
+.el-loading-spinner .path {
+  stroke: $bg-color-btn;
+}
+.el-loading-spinner .el-loading-text {
+  color: $bg-color-btn;
+}
